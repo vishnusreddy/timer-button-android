@@ -6,7 +6,8 @@
 
     <com.vishnusreddy.timerbutton.TimerButton
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        style="@style/Base.Theme.TimerButton"
         app:layout_constraintTop_toTopOf="parent"
         app:text="Some text"
         app:progressPercentage="100"
