@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TimerButtonTheme">
+        <attr name="timerButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TimerButton">
+        <attr name="text" format="string" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="progressColor" format="color" />
+        <attr name="trackColor" format="color" />
+        <attr name="buttonColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="progressPercentage" format="float" />
+    </declare-styleable>
+</resources>
