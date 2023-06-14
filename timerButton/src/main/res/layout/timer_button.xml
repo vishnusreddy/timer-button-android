@@ -5,10 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="6dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:paddingVertical="12dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Wait (120s)"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         app:backgroundTint="#D4D8DD"
@@ -27,20 +42,5 @@
         app:layout_constraintTop_toTopOf="@id/cta"
         app:trackColor="#D4D8DD"
         app:trackCornerRadius="8dp" />
-
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:elevation="6dp"
-        android:gravity="center"
-        android:textSize="14sp"
-        android:paddingVertical="12dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="Wait (120s)"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

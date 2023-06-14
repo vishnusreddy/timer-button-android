@@ -29,7 +29,7 @@ class TimerButton @JvmOverloads constructor(
 
 
     init {
-        binding = TimerButtonBinding.inflate(LayoutInflater.from(context))
+        binding = TimerButtonBinding.inflate(LayoutInflater.from(context), this, true)
         getAttributes(attrs, defStyleAttr)
         setupViews()
     }
