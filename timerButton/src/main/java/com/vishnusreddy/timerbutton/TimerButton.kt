@@ -1,5 +1,6 @@
 package com.vishnusreddy.timerbutton
 
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.util.AttributeSet
 import android.util.Log
@@ -85,6 +86,11 @@ class TimerButton @JvmOverloads constructor(
         binding.cta.cornerRadius = cornerRadius
 
         binding.root.visibility = View.VISIBLE
+
+        ObjectAnimator
+            .ofInt(binding.progressHorizontal, "progress", 0, 100)
+            .setDuration(30000)
+            .start()
 
         Log.i("Came Here", "$progressPercentage")
     }
