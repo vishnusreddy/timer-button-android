@@ -7,10 +7,11 @@
     <com.vishnusreddy.timerbutton.TimerButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:text="Some text"
-        app:textSize="11sp"
+        app:text="Some Dummy Text"
+        app:textSize="17sp"
         app:progressPercentage="100"
         app:cornerRadius="20dp"/>
 

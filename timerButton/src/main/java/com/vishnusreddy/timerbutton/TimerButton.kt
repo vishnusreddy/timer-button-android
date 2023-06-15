@@ -3,6 +3,7 @@ package com.vishnusreddy.timerbutton
 import android.content.Context
 import android.util.AttributeSet
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +21,7 @@ class TimerButton @JvmOverloads constructor(
     /** View attributes global variables. */
     private var text: CharSequence? = null
     private var textColor: Int = getColor(context, R.color.md_grey_50)
-    private var textSize: Float = spToPx(context, 12)
+    private var textSize: Float = spToPx(context, 17f)
     private var progressColor: Int = getColor(context, R.color.md_grey_400)
     private var trackColor: Int = getColor(context, R.color.md_grey_300)
     private var buttonColor: Int = getColor(context, R.color.md_grey_300)
@@ -44,7 +45,7 @@ class TimerButton @JvmOverloads constructor(
         textColor = attributes.getColor(
             R.styleable.TimerButton_textColor, getColor(context, R.color.md_grey_50)
         )
-        textSize = attributes.getDimension(R.styleable.TimerButton_textSize, spToPx(context, 12))
+        textSize = attributes.getDimension(R.styleable.TimerButton_textSize, spToPx(context, 17F))
 
         // Progress, Track and Button Attributes
         progressColor = attributes.getColor(
@@ -57,8 +58,8 @@ class TimerButton @JvmOverloads constructor(
             R.styleable.TimerButton_textColor, getColor(context, R.color.md_grey_300)
         )
         cornerRadius = attributes.getDimension(
-            R.styleable.TimerButton_cornerRadius, 8.dpToPx.toFloat()
-        ).toInt()
+            R.styleable.TimerButton_cornerRadius, 8F
+        ).toInt().dpToPx
 
         // Percentage of Progress Completed
         progressPercentage = attributes.getFloat(R.styleable.TimerButton_progressPercentage, 0f)
@@ -73,7 +74,7 @@ class TimerButton @JvmOverloads constructor(
 
         binding.tvTitle.text = text
         binding.tvTitle.setTextColor(textColor)
-        binding.tvTitle.textSize = textSize
+        binding.tvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
 
         binding.progressHorizontal.setIndicatorColor(progressColor)
         binding.progressHorizontal.trackColor = trackColor

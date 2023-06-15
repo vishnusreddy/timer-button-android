@@ -5,9 +5,9 @@ import android.util.TypedValue
 
 object Utils {
 
-    fun spToPx(context: Context, sp: Int): Float {
+    fun spToPx(context: Context, sp: Float): Float {
         return TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_SP, sp.toFloat(),
+            TypedValue.COMPLEX_UNIT_SP, sp,
             context.resources.displayMetrics
         )
     }
