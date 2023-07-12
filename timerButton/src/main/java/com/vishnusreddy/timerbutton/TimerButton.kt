@@ -2,6 +2,7 @@ package com.vishnusreddy.timerbutton
 
 import android.animation.ObjectAnimator
 import android.content.Context
+import android.os.CountDownTimer
 import android.util.AttributeSet
 import android.util.Log
 import android.util.TypedValue
@@ -86,12 +87,26 @@ class TimerButton @JvmOverloads constructor(
         binding.cta.cornerRadius = cornerRadius
 
         binding.root.visibility = View.VISIBLE
-
-        ObjectAnimator
-            .ofInt(binding.progressHorizontal, "progress", 0, 100)
-            .setDuration(30000)
-            .start()
+        throughCountDownTimer()
 
         Log.i("Came Here", "$progressPercentage")
+    }
+
+    private fun throughCountDownTimer() {
+        val countDownTimer = object : CountDownTimer(120000, 100) {
+            override fun onTick(millisUntilFinished: Long) {
+                val progress = ((120000 - millisUntilFinished) * 100 / 120000).toInt()
+                binding.progressHorizontal.setProgress(progress, true)
+            }
+
+            override fun onFinish() {
+                binding.progressHorizontal.setProgress(100, true)
+            }
+        }
+        countDownTimer.start()
+    }
+
+    override fun onViewRemoved(view: View?) {
+        super.onViewRemoved(view)
     }
 }
