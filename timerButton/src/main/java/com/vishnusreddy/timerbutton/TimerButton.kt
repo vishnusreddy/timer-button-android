@@ -1,6 +1,5 @@
 package com.vishnusreddy.timerbutton
 
-import android.animation.ObjectAnimator
 import android.content.Context
 import android.os.CountDownTimer
 import android.util.AttributeSet
@@ -28,7 +27,7 @@ class TimerButton @JvmOverloads constructor(
     private var trackColor: Int = getColor(context, R.color.md_grey_300)
     private var buttonColor: Int = getColor(context, R.color.md_grey_300)
     private var cornerRadius: Int = 8.dpToPx
-    private var progressPercentage = 0f
+    private var startProgressPercentage = 0f
 
 
     init {
@@ -64,7 +63,7 @@ class TimerButton @JvmOverloads constructor(
         ).toInt().dpToPx
 
         // Percentage of Progress Completed
-        progressPercentage = attributes.getFloat(R.styleable.TimerButton_progressPercentage, 0f)
+        startProgressPercentage = attributes.getFloat(R.styleable.TimerButton_progressPercentage, 0f)
 
         attributes.recycle()
     }
@@ -89,8 +88,25 @@ class TimerButton @JvmOverloads constructor(
         binding.root.visibility = View.VISIBLE
         throughCountDownTimer()
 
-        Log.i("Came Here", "$progressPercentage")
+        Log.i("Came Here", "$startProgressPercentage")
     }
+
+    fun startProgress() {
+
+    }
+
+    fun startProgress(startPercentage: Int = 0) {
+
+    }
+
+    fun stopTimer() {
+
+    }
+
+    fun stopTimer(toActivateButton: Boolean = true) {
+
+    }
+
 
     private fun throughCountDownTimer() {
         val countDownTimer = object : CountDownTimer(120000, 100) {
